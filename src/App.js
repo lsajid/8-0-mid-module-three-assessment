@@ -18,9 +18,7 @@ class App extends Component {
         creditCard: "",
         zipCode: "",
       },
-      name: "",
       price: 0,
-      uniqueID: 0,
     }
   }
 
@@ -67,7 +65,7 @@ class App extends Component {
   return (
     <div className="wrapper">
       <Products productData={this.state.prod} handleInput={this.handleInput} handleAddToCart={this.handleAddToCart}/>
-      <Cart handleAddToCart={this.handleAddToCart} cart={this.state.cart} />
+      <Cart handleAddToCart={this.handleAddToCart} cart={this.state.cart} price={this.state.price}/>
       <CheckOutForm handleFormInput={this.handleFormInput} handleFormSubmit={this.handleFormSubmit}/>
     </div>
   )
