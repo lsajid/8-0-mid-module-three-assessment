@@ -11,43 +11,41 @@ class App extends Component {
     this.state = {
       prod: productData,
       cart: [],
-      price: 0,
       form: {
         firstName:"",
         lastName: "",
         email: "",
         creditCard: "",
         zipCode: "",
-      }
+      },
+      name: "",
+      price: 0,
+      uniqueID: 0,
     }
   }
 
-  handleInput = () => {
-
-  }
-
-  handleAddToCart = () => {
-
-  }
-
-  handleAddToUL = () => {
+  handleAddToCart = (a) => {
+    //update lists array in state
+ 
     // this.setState({
-    //   cart:[...this.state.cart, a]
+    //   cart: [...this.state.cart, {name: this.state.name, price: this.state.price, id: this.state.uniqueID, display: true }],
+    //   uniqueID: this.state.uniqueID + 1,
+    //   price: this.state.price + price,
     // })
+    this.setState({
+      price: this.state.price + a.price,
+      cart : [...this.state.cart, a]
+    })
+
   }
 
-  handleTotalPrice = () => {
-
+  handleFormInput = (event) => {
+    this.setState({
+      form:{...this.state.form, [event.target.name]: event.target.value,}
+    })
   }
 
   handleFormSubmit = (event) => {
-    //When I complete the form with valid input and click Buy Now, an alert tells me the purchase was successful.
-    //Alert text should include: Purchase complete
-    //When I complete the form with valid input and click Buy Now, an alert tells me the total amount I will be charged.
-    //When I complete the form but a piece of data is missing, an alert tells me that my input is not valid.
-      //Alert text should include: Input is not valid
-    //When I complete the form but the zip code is not 5 digits long, an alert tells me 
-      //Zip code is not valid
     event.preventDefault();
 
     if(this.state.form.firstName === "" || this.state.form.lastName === "" || this.state.form.email === "" || this.state.form.creditCard === "" || this.state.form.zipCode === ""){
@@ -63,18 +61,14 @@ class App extends Component {
     }
   }
 
-  handleFormInput = (event) => {
-    this.setState({
-      form:{...this.state.form, [event.target.name]: event.target.value,}
-    })
-  }
+
 
  render() {
   return (
     <div className="wrapper">
       <Products productData={this.state.prod} handleInput={this.handleInput} handleAddToCart={this.handleAddToCart}/>
-      <Cart handleAddToUL={this.handleAddToUL} handleAddToCart={this.handleAddToCart} handleTotalPrice={this.handleTotalPrice}/>
-      <CheckOutForm handleFormInput={this.handleFormInput} handleFormSubmit={this.handleFormSubmit} handleTotalPrice={this.handleTotalPrice}/>
+      <Cart handleAddToCart={this.handleAddToCart} cart={this.state.cart} />
+      <CheckOutForm handleFormInput={this.handleFormInput} handleFormSubmit={this.handleFormSubmit}/>
     </div>
   )
  }
