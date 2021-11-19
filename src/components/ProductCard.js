@@ -6,11 +6,14 @@ class ProductCard extends Component {
     }
     render () {
         return (
-            <div className="productCard">
-                <div> Name: {this.props.product.name} </div>
+            <div className="products">
+                <div> <strong> {this.props.product.name}</strong> </div>
                 <div>Price: {this.props.product.price} </div>
                 <button> Add to Cart </button>
-                <img src={this.props.product.img}/>
+                <div>
+                    <img src={this.props.product.img}/>
+                </div>
+                <br/>
                 <div>Description: {this.props.product.description} </div>
                 <br/> <br/>
             </div>
