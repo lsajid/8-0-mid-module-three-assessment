@@ -53,9 +53,9 @@ class App extends Component {
       alert(`Credit card number is not valid`)
     } 
     else if(this.state.form.zipCode.length !== 5) {
-      alert(`Zip Code is not valid`)
+      alert(`Zip code is not valid`)
     } else {
-      alert(`Purchase complete will be $total `)
+      alert(`Purchase complete will be ${this.state.price}`)
     }
   }
 
@@ -66,7 +66,7 @@ class App extends Component {
     <div className="wrapper">
       <Products productData={this.state.prod} handleInput={this.handleInput} handleAddToCart={this.handleAddToCart}/>
       <Cart handleAddToCart={this.handleAddToCart} cart={this.state.cart} price={this.state.price}/>
-      <CheckOutForm handleFormInput={this.handleFormInput} handleFormSubmit={this.handleFormSubmit}/>
+      <CheckOutForm handleFormInput={this.handleFormInput} handleFormSubmit={this.handleFormSubmit} price={this.state.price}/>
     </div>
   )
  }

@@ -1,4 +1,5 @@
 import { Component } from "react";
+import formatPrice from "../helpers/formatPrice";
 
 class ProductCard extends Component {
     constructor(props){
@@ -7,11 +8,9 @@ class ProductCard extends Component {
     
     render () {
         return (
-            <div className="products">
-
-                
+            <div className="productsCard">
                     <div> <strong> {this.props.product.name}</strong> </div>
-                    <div>Price: {this.props.product.price} </div>
+                    <div>Price: {formatPrice(this.props.product.price)} </div>
                     <button onClick={()=>this.props.handleAddToCart(this.props.product)}> Add to Cart </button>
 
                     <div>

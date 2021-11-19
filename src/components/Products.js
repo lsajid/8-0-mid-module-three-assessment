@@ -15,7 +15,7 @@ class Products extends Component {
         return (
             <div id="product-container">
                  <h2>My Garage Sale</h2>
-               <div id="put-grid-here">
+               <div className="products">
                    {allProducts}
                </div>
             </div>
