@@ -5,6 +5,7 @@ class Cart extends Component {
         super();
     }
     render () {
+
         return (
             <div>
                 <h2>Cart</h2>
@@ -19,17 +20,3 @@ class Cart extends Component {
     }
 }
 export default Cart;
-
-// import { Component } from "react";
-
-// class CartUL extends Component {
-//     render() {
-//         return (
-//             <div>
-//                 <li> item Name: $Price</li>
-//             </div>
-//         )
-//     }
-// }
-
-// export default CartUL;

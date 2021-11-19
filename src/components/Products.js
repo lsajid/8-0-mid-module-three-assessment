@@ -7,11 +7,13 @@ class Products extends Component {
         super();
     }
     render () {
-        let allProducts = this.props.productData.map((product, index)=> <ProductCard key={product.name+index} product={product}/>)
+        let allProducts = this.props.productData.map((product, index)=> <ProductCard key={product.name+index} product={product} handleAddToCart={()=>this.props.handleAddToCart}/>)
         return (
             <div id="product-container">
                  <h2>My Garage Sale</h2>
-               <div id="put-grid-here">{allProducts}</div>
+               <div id="put-grid-here">
+                   {allProducts}
+               </div>
             </div>
         )
     }

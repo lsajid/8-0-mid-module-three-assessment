@@ -1,15 +1,16 @@
 import { Component } from "react";
 
 class ProductCard extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
     }
+    
     render () {
         return (
             <div className="products">
                 <div> <strong> {this.props.product.name}</strong> </div>
                 <div>Price: {this.props.product.price} </div>
-                <button> Add to Cart </button>
+                <button onClick={()=>this.props.handleAddToCart(this.props.product)}> Add to Cart </button>
                 <div>
                     <img src={this.props.product.img}/>
                 </div>
