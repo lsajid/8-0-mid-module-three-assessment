@@ -8,10 +8,11 @@ class ProductCard extends Component {
     
     render () {
         return (
-            <div className="productsCard">
+            <div className=".products">
                     <div> <strong> {this.props.product.name}</strong> </div>
                     <div>Price: {formatPrice(this.props.product.price)} </div>
-                    <button onClick={()=>this.props.handleAddToCart(this.props.product)}> Add to Cart </button>
+                    
+                    <button type="submit" onClick={()=>this.props.handleAddToCart(this.props.product)}>Add To Cart</button>
 
                     <div>
                       <img src={this.props.product.img}/>

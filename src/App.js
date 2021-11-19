@@ -65,7 +65,9 @@ class App extends Component {
   return (
     <div className="wrapper">
       <Products productData={this.state.prod} handleInput={this.handleInput} handleAddToCart={this.handleAddToCart}/>
+      <body>
       <Cart handleAddToCart={this.handleAddToCart} cart={this.state.cart} price={this.state.price}/>
+      </body>
       <CheckOutForm handleFormInput={this.handleFormInput} handleFormSubmit={this.handleFormSubmit} price={this.state.price}/>
     </div>
   )
