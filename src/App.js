@@ -4,6 +4,7 @@ import CheckOutForm from "./components/CheckOutForm";
 import Products from "./components/Products";
 import Cart from "./components/Cart";
 import productData from "./data/productData";
+import formatPrice from "./helpers/formatPrice";
 
 class App extends Component {
   constructor(){
@@ -55,7 +56,7 @@ class App extends Component {
     else if(this.state.form.zipCode.length !== 5) {
       alert(`Zip code is not valid`)
     } else {
-      alert(`Purchase complete will be ${this.state.price}`)
+      alert(`Yay! Purchase complete! You will be charged ${formatPrice(this.state.price +this.state.price*0.05)}`)
     }
   }
 
