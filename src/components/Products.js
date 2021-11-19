@@ -9,9 +9,9 @@ class Products extends Component {
     render () {
         let allProducts = this.props.productData.map((product, index)=> <ProductCard key={product.name+index} product={product}/>)
         return (
-            <div>
+            <div id="product-container">
                  <h2>My Garage Sale</h2>
-               {allProducts}
+               <div id="put-grid-here">{allProducts}</div>
             </div>
         )
     }
