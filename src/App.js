@@ -11,11 +11,7 @@ class App extends Component {
     this.state = {
       prod: productData,
       cart: [],
-      selectedInput: "",
-      newItem : {
-        name:"",
-        price:"",
-      }, 
+      price: 0,
       form: {
         firstName:"",
         lastName: "",
@@ -26,10 +22,22 @@ class App extends Component {
     }
   }
 
-  handleAddToCart = (a) => {
-    this.setState({
-      cart:[...this.state.cart, a]
-    })
+  handleInput = () => {
+
+  }
+
+  handleAddToCart = () => {
+
+  }
+
+  handleAddToUL = () => {
+    // this.setState({
+    //   cart:[...this.state.cart, a]
+    // })
+  }
+
+  handleTotalPrice = () => {
+
   }
 
   handleFormSubmit = (event) => {
@@ -62,12 +70,11 @@ class App extends Component {
   }
 
  render() {
-   console.log(this.state.prod)
   return (
     <div className="wrapper">
-      <Products productData={this.state.prod}/>
-      <Cart />
-      <CheckOutForm handleFormInput={this.handleFormInput} handleFormSubmit={this.handleFormSubmit}/>
+      <Products productData={this.state.prod} handleInput={this.handleInput} handleAddToCart={this.handleAddToCart}/>
+      <Cart handleAddToUL={this.handleAddToUL} handleAddToCart={this.handleAddToCart} handleTotalPrice={this.handleTotalPrice}/>
+      <CheckOutForm handleFormInput={this.handleFormInput} handleFormSubmit={this.handleFormSubmit} handleTotalPrice={this.handleTotalPrice}/>
     </div>
   )
  }

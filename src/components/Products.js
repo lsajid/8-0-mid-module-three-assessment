@@ -5,7 +5,11 @@ import ProductCard from "./ProductCard";
 class Products extends Component {
     constructor(){
         super();
+        this.state = {
+            
+        }
     }
+    
     render () {
         let allProducts = this.props.productData.map((product, index)=> <ProductCard key={product.name+index} product={product} handleAddToCart={()=>this.props.handleAddToCart}/>)
         return (
