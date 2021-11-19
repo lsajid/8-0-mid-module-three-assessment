@@ -18,7 +18,7 @@ class App extends Component {
    console.log(this.state.prod)
   return (
     <div className="wrapper">
-      <Products/>
+      <Products productData={productData}/>
       <Cart/>
       <CheckOutForm/>
     </div>
