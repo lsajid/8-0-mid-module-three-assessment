@@ -8,7 +8,7 @@ class Cart extends Component {
         let allUnorderedLists = this.props.cart.map((item, index)=> {
             return (
                 <ul>
-                    <li> yo</li>
+                    <li> {item.name}: {formatPrice(item.price)}</li>
                 </ul>
             )
         })
